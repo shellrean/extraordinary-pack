@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 30, 2020 at 02:01 AM
+-- Generation Time: Jul 30, 2020 at 05:48 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -347,6 +347,14 @@ CREATE TABLE `oauth_clients` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `oauth_clients`
+--
+
+INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `provider`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Laravel Personal Access Client', 'df8GwCntwX5iPJmIGwCkNfqOaXmGrqkJBE4y5MCn', NULL, 'http://localhost', 1, 0, 0, '2020-07-30 05:47:25', '2020-07-30 05:47:25'),
+(2, NULL, 'Laravel Password Grant Client', 'XNM8SH4lW50KPSGDY8leR5CHxeiOjbdkOfPBqZuH', 'users', 'http://localhost', 0, 1, 0, '2020-07-30 05:47:25', '2020-07-30 05:47:25');
+
 -- --------------------------------------------------------
 
 --
@@ -359,6 +367,13 @@ CREATE TABLE `oauth_personal_access_clients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `oauth_personal_access_clients`
+--
+
+INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2020-07-30 05:47:25', '2020-07-30 05:47:25');
 
 -- --------------------------------------------------------
 
@@ -508,7 +523,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'admin@shellrean.com', NULL, '$2y$10$eroZvvEJavwGtK8Fxm7/1uJE2aNThTuHFia/mgxgIoV/RduN9l4k.', 'admin', '2020-07-30 02:00:57', '2020-07-30 02:00:57');
+(1, 'Administrator', 'admin@admin.com', NULL, '$2y$10$eroZvvEJavwGtK8Fxm7/1uJE2aNThTuHFia/mgxgIoV/RduN9l4k.', 'admin', '2020-07-30 02:00:57', '2020-07-30 02:00:57');
 
 --
 -- Indexes for dumped tables
@@ -783,13 +798,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pesertas`
